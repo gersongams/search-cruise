@@ -19,22 +19,16 @@ class ConnectedDateSelector extends React.Component {
     const { start, end } = this.state;
     if (start !== "" && end !== "") {
       this.setState({ start: value, end: "" }, () => this.handleDate());
-    } else {
-      if (start !== "") {
-        if (start === value) {
-          this.setState({ end: "", start: "" }, () => this.handleDate());
-        } else {
-          if (value < start) {
-            this.setState({ end: start, start: value }, () =>
-              this.handleDate()
-            );
-          } else {
-            this.setState({ end: value }, () => this.handleDate());
-          }
-        }
+    } else if (start !== "") {
+      if (start === value) {
+        this.setState({ end: "", start: "" }, () => this.handleDate());
+      } else if (value < start) {
+        this.setState({ end: start, start: value }, () => this.handleDate());
       } else {
-        this.setState({ start: value }, () => this.handleDate());
+        this.setState({ end: value }, () => this.handleDate());
       }
+    } else {
+      this.setState({ start: value }, () => this.handleDate());
     }
   };
 
