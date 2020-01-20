@@ -14,7 +14,7 @@ const initialState = {
       label: "cruising to",
       value: "any destination",
       mobile: "Select destination",
-      selected: false
+      selected: true
     },
     {
       id: 1,
@@ -28,7 +28,7 @@ const initialState = {
       label: "leaving",
       value: "any date",
       mobile: "Select travel dates",
-      selected: true
+      selected: false
     }
   ],
   destinations: [
@@ -45,7 +45,7 @@ const initialState = {
     {
       id: 2,
       value: "Asia",
-      checked: false
+      checked: true
     },
     {
       id: 3,
@@ -60,7 +60,7 @@ const initialState = {
     {
       id: 5,
       value: "Bermuda",
-      checked: false
+      checked: true
     },
     {
       id: 6,
@@ -70,12 +70,12 @@ const initialState = {
     {
       id: 7,
       value: "Caribbean",
-      checked: false
+      checked: true
     },
     {
       id: 8,
       value: "Cuba",
-      checked: false
+      checked: true
     },
     {
       id: 9,
@@ -119,20 +119,20 @@ const initialState = {
       selected: true,
       cities: [
         { city: "Baltimore, Maryland", checked: false },
-        { city: "Boston, Massachusetts", checked: false },
+        { city: "Boston, Massachusetts", checked: true },
         { city: "Cape Liberty, New Jersey", checked: false },
         { city: "Fort Lauderdale, Florida", checked: false },
-        { city: "Galveston, Texas", checked: false },
+        { city: "Galveston, Texas", checked: true },
         { city: "Honolulu (Oahu), Hawaii", checked: false },
         { city: "Los Angeles, California", checked: false },
-        { city: "Miami, Florida", checked: false },
-        { city: "New Orleans, Louisiana", checked: false },
-        { city: "Orlando (Port Canaveral), Fl", checked: false },
+        { city: "Miami, Florida", checked: true },
+        { city: "New Orleans, Louisiana", checked: true },
+        { city: "Orlando (Port Canaveral), Fl", checked: true },
         { city: "Quebec City, Quebec, Canada", checked: false },
         { city: "San Diego, California", checked: false },
         { city: "San Juan, Puerto Rico", checked: false },
         { city: "Seattle, Washington", checked: false },
-        { city: "Seward, Alaska", checked: false },
+        { city: "Seward, Alaska", checked: true },
         { city: "Tampa, Florida", checked: false },
         { city: "Vancouver, British Columbia", checked: false }
       ]
@@ -144,8 +144,8 @@ const initialState = {
         { city: "Amsterdam, Netherlands", checked: false },
         { city: "Copenhagen, Denmark", checked: false },
         { city: "Southampton, England", checked: false },
-        { city: "Stockholm, Sweden", checked: false },
-        { city: "Barcelona, Spain", checked: false },
+        { city: "Stockholm, Sweden", checked: true },
+        { city: "Barcelona, Spain", checked: true },
         { city: "Tarragona, Spain", checked: false },
         { city: "Rome (Civitavecchia), Italy", checked: false },
         { city: "Venice, Italy", checked: false }
@@ -157,8 +157,8 @@ const initialState = {
       cities: [
         { city: "Beijing (Tianjin), China", checked: false },
         { city: "Brisbane, Australia", checked: false },
-        { city: "Hong Kong, China", checked: false },
-        { city: "Perth (Fremantle), Australia", checked: false },
+        { city: "Hong Kong, China", checked: true },
+        { city: "Perth (Fremantle), Australia", checked: true },
         { city: "Shanghai (Baoshan), China", checked: false },
         { city: "Singapore, Singapore", checked: false },
         { city: "Sydney, Australia", checked: false },
@@ -168,7 +168,7 @@ const initialState = {
     }
   ],
   showContent: false,
-  leaving: { start: "", end: "" }
+  leaving: { start: 201802, end: 201808 }
 };
 
 const rootReducer = (state = initialState, action) => {
