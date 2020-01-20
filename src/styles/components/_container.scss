@@ -1,0 +1,13 @@
+.container {
+  margin: 2rem 8rem;
+  @include respond(tab-land) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    margin: 0;
+    padding: 2rem;
+  }
+}

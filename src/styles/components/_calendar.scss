@@ -1,0 +1,137 @@
+.date-selector {
+  display: flex;
+  justify-content: center;
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
+}
+
+.calendar {
+  margin: 1rem 4rem;
+  @include respond(tab-land) {
+    margin: 2rem 3rem;
+  }
+
+  &__year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    @include respond(tab-land) {
+      &::after {
+        background-color: $color-secondary;
+        left: 0;
+        content: " ";
+        height: 0.5rem;
+        position: absolute;
+        width: calc(50% - 40px);
+      }
+      &::before {
+        background-color: $color-secondary;
+        right: 0;
+        content: " ";
+        height: 0.5rem;
+        position: absolute;
+        width: calc(50% - 40px);
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  &__month {
+    padding: 0.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      padding-bottom: 100%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .bubble {
+      border-radius: 50%;
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: $color-primary;
+      font-size: 1.2rem;
+      z-index: 2;
+
+      &:hover {
+        .month-text {
+          color: $color-primary;
+        }
+
+        &::before {
+          background: $color-white;
+          border: 1px solid $color-primary;
+          width: 100%;
+          height: 100%;
+          content: "";
+          position: absolute;
+          border-radius: 50%;
+          z-index: 1;
+          color: white;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .month-text {
+        color: $color-primary;
+        z-index: 10;
+        font-size: 1.6rem;
+      }
+
+      &--selected {
+        background: $color-primary;
+        color: $color-white;
+
+        .month-text {
+          color: $color-white;
+        }
+
+        &::before {
+          background: $color-primary;
+          width: 100%;
+          height: 100%;
+          content: "";
+          position: absolute;
+          border-radius: 50%;
+          z-index: 1;
+          color: white;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .between {
+    background: $color-secondary;
+    border-radius: 0;
+  }
+
+  .bg-end {
+    border-radius: 0 50% 50% 0;
+  }
+
+  .bg-start {
+    border-radius: 50% 0 0 50%;
+  }
+}

@@ -1,0 +1,138 @@
+.navigation-bar {
+  border-bottom: 2px solid $color-secondary;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 10rem;
+
+  & .navitem {
+    display: flex;
+    flex: 1 1 0;
+    justify-content: space-between;
+    margin-left: 2rem;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    &-label {
+      text-transform: uppercase;
+      font-size: 1rem;
+      display: flex;
+
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-value {
+      text-transform: capitalize;
+      color: $color-primary;
+      font-size: 1.8rem;
+    }
+
+    &-icon {
+      transform: scale(0.7);
+
+      i {
+        color: $color-primary;
+      }
+    }
+
+    &-length {
+      border-radius: 50%;
+      background: $color-secondary;
+      color: $color-primary;
+      font-size: 2.2rem;
+      height: 5rem;
+      width: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--selected {
+      &::after {
+        background-color: $color-secondary;
+        bottom: 0;
+        content: " ";
+        height: 0.5rem;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+
+  & .search {
+    display: flex;
+    flex: 1 1 0;
+    justify-content: center;
+    margin-left: 2rem;
+    align-items: center;
+  }
+
+  @include respond(tab-land) {
+    flex-direction: column;
+    border-bottom: none;
+    height: auto;
+    & .navitem {
+      border: 1px solid $color-secondary;
+      padding: 1rem 2rem;
+      margin: 1rem 0;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      &-label {
+        text-transform: capitalize;
+        color: $color-primary;
+        font-size: 1.8rem;
+      }
+
+      &-value {
+        text-transform: capitalize;
+        color: $color-primary;
+        font-size: 1.8rem;
+      }
+
+      &--selected {
+        &::after {
+          display: none;
+        }
+      }
+    }
+    & .search {
+      margin: 4rem 0;
+    }
+  }
+}
+
+.mobile-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid $color-secondary;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+
+  .mobile-title {
+    text-transform: capitalize;
+  }
+
+  .blue {
+    color: $color-primary;
+    cursor: pointer;
+
+    i {
+      color: $color-primary;
+      font-size: 1rem;
+      transform: scale(0.5) rotateY(180deg);
+    }
+  }
+}

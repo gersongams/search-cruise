@@ -1,0 +1,26 @@
+.rotated {
+  transform: rotate(90deg);
+  animation: all 0.3s ease-in-out;
+}
+
+.only-mobile {
+  display: none !important;
+  @include respond(tab-land) {
+    display: flex !important;
+  }
+}
+
+.only-desktop {
+  display: flex !important;
+  @include respond(tab-land) {
+    display: none !important;
+  }
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}

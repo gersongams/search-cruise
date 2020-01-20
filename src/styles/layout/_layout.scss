@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  @include respond(tab-land) {
+    padding: 0;
+  }
+}

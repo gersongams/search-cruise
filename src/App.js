@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Card from "./components/Card";
+import Navigation from "./components/Navigation";
+import Container from "./components/Container";
+import { connect } from "react-redux";
+import Departures from "./components/Departures";
+import Destinations from "./components/Destinations";
+import DateSelector from "./components/DateSelector";
+import MobileNavbar from "./components/MobileNavbar";
 
-function App() {
+const ConnectedApp = ({ navigation, showContent }) => {
+  const render = () => {
+    const selected = navigation.find(i => i.selected === true);
+    // eslint-disable-next-line default-case
+    switch (selected.id) {
+      case 0:
+        return <Destinations />;
+      case 1:
+        return <Departures />;
+      case 2:
+        return <DateSelector />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="main">
+      <Card className={"only-desktop"}>
+        <Navigation />
+        <Container>{render()}</Container>
+      </Card>
+      <div className={"only-mobile app"}>
+        <h1>Find a cruise</h1>
+        <Navigation />
+        {showContent && (
+          <Container>
+            <MobileNavbar />
+            {render()}
+          </Container>
+        )}
+      </div>
+    </main>
   );
-}
+};
+
+const mapStateToProps = reducer => ({
+  ...reducer
+});
+
+const App = connect(mapStateToProps, null)(ConnectedApp);
 
 export default App;

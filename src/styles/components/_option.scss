@@ -1,0 +1,59 @@
+.option-list {
+  display: flex;
+  flex-flow: column wrap;
+  place-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  height: 22rem;
+  max-height: 22rem;
+  width: auto;
+  margin: 0 auto;
+  @include respond(tab-land) {
+    height: auto;
+    max-height: calc(100vh - 84px - 8rem);
+    overflow: auto;
+    flex-flow: column;
+  }
+}
+
+.option {
+  display: inline-block;
+  width: 25%;
+  transition: background 0.3s;
+  @include respond(tab-land) {
+    width: 100%;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    border-radius: 0.25rem;
+    padding: 1rem 2rem;
+    width: auto;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: $color-primary;
+    transition: background 0.3s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $color-secondary;
+    }
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
+  }
+
+  &--checked {
+    label {
+      transition: background 0.3s;
+      background: $color-secondary;
+    }
+  }
+}

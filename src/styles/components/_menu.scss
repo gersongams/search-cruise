@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  &--item {
+    margin: 0 2rem;
+    color: $color-primary;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
