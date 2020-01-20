@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  transition: all 0.3s;
+  @include respond(tab-land) {
+    border-bottom: 1px solid $color-primary;
+  }
 
   &--item {
     margin: 0 2rem;
@@ -11,9 +15,31 @@
     cursor: pointer;
     transition: all 0.3s;
     font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &__selected {
+      transition: all 0.3s;
+      text-decoration: underline;
+    }
+
+    @include respond(tab-land) {
+      margin: 0;
+      padding: 1rem 2rem;
+      transition: all 0.3s;
+      &:hover {
+        text-decoration: none;
+      }
+      &__selected {
+        text-decoration: none;
+        transition: all 0.3s;
+        border-bottom: 2px solid $color-primary;
+      }
     }
   }
 }

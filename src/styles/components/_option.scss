@@ -10,7 +10,7 @@
   margin: 0 auto;
   @include respond(tab-land) {
     height: auto;
-    max-height: calc(100vh - 84px - 8rem);
+    max-height: calc(100vh - 21rem);
     overflow: auto;
     flex-flow: column;
   }

@@ -1,8 +1,10 @@
 import React from "react";
 
-const MenuItem = ({ value, action }) => {
+const MenuItem = ({ value, action, selected }) => {
+  const classes = ["menu--item"];
+  if (selected) classes.push("menu--item__selected");
   return (
-    <div className="menu--item" onClick={() => action(value)}>
+    <div className={classes.join(" ")} onClick={() => action(value)}>
       {value}
     </div>
   );

@@ -34,7 +34,7 @@ const ConnectedNavItem = ({
       navValue = checkedDep[0].city;
     }
   }
-
+  let [label1, label2] = label.split(" ");
   if (id === 2) {
     const { start, end } = leaving;
     if (start) {
@@ -45,8 +45,6 @@ const ConnectedNavItem = ({
     }
   }
 
-  const [label1, label2] = label.split(" ");
-
   return (
     <div
       onClick={() => action(id)}
@@ -55,7 +53,8 @@ const ConnectedNavItem = ({
       <div>
         <div className="navitem-label">
           <span className={"only-desktop"}>{label1}</span>
-          <span>{label2 ? label2 : label1}</span>
+          <span>{label2}</span>
+          {id === 2 && <span className={"only-mobile"}>{label1}</span>}
         </div>
         <div className="navitem-value">{navValue}</div>
       </div>

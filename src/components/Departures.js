@@ -25,6 +25,7 @@ const ConnectedDepartures = ({
             key={index}
             action={selectContinent}
             value={continent.name}
+            selected={continent.selected}
           />
         ))}
       </Menu>
