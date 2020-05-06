@@ -1,4 +1,4 @@
-# Cruise Selector
+# Search cruise app
 
 This project mimics the royal caribbean search cruise component. Built with React & Redux. It uses Sass for styling.
 
@@ -22,4 +22,4 @@ yarn start
 
 ## Demo
 
-[Demo of the application](www.google.com)
+[Demo of the application](https://search-cruise.netlify.app/)
